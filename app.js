@@ -22,8 +22,8 @@ app.use('/api/v1', auth.verifyToken, routesController)
 
 
 app.post('/signup', upload.single('avatar'), function (req, res, next) {
-    if (!userService.isUserValid(req.body.email)) {
-        const id = registrationService.insertUser(req.body.name, req.body.email, req.body.mobile, req.file.filename)
+    if (!userService.isUserValid(req.body.email).length) {
+        const id = registrationService.insertUser(req.body.name, req.body.email, req.body.mobile, req.body.password, req.file.filename)
         res.status(200).json({
             success: true,
             message: `${req.body.name} has been successfully registered with id ${id}`

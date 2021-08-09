@@ -1,7 +1,7 @@
 const fs = require("fs");
 const bcrypt = require("bcrypt");
 
-var users = ''
+var users = []
 fs.readFile("./database/users.json", "utf8", (err, allUsers) => {
     if (err) {
         console.log("File read failed:", err);
@@ -15,12 +15,13 @@ const getAllUsers = () => {
 }
 
 const getUser = (id) => {
-    const user = users.filter((eachUser) => eachUser.id == id)
+    const user = users.filter((eachUser) => eachUser.id === id)
     return user;
 }
 
 const isUserValid = (email) => {
-    const user = users.filter((eachUser) => eachUser.email == email)
+    const user = users.filter((eachUser) => eachUser.email === email)
+    console.log(user)
     return user
 }
 

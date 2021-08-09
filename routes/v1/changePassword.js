@@ -8,7 +8,8 @@ module.exports = () => {
             if (err) {
                 res.sendStatus(403)
             } else {
-                const prevUser = userService.getUser(authData.id);
+                const prevUser = userService.isUserValid(authData.email);
+                console.log(prevUser)
                 requestData = req.body
                 const name = prevUser[0].name
                 const email = prevUser[0].email
