@@ -4,6 +4,7 @@
   "description": "A basic node js application for user authentication and login with other users view",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +23,13 @@
   },
   "homepage": "https://github.com/fruxc/User-System-NodeJS#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.12",
+    "uuid4": "^2.0.2"
   }
 }
