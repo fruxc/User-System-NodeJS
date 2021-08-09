@@ -14,8 +14,6 @@ const insertUser = (name, email, mobile, password, avatar) => {
         mobile: mobile,
         avatar: avatar
     }
-    console.log("user");
-    console.log(user);
     fs.readFile('./database/users.json', function (err, data) {
         var json = JSON.parse(data)
         json.push(user)
