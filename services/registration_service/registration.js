@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 const insertUser = (name, email, mobile, password, avatar) => {
-    password = bcrypt.hashSync(password, 10);
+    password = bcrypt.hashSync(password, saltRounds);
     const user = {
         id: id,
         name: name,

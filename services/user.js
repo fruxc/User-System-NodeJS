@@ -1,4 +1,5 @@
 const fs = require("fs");
+const bcrypt = require("bcrypt");
 
 var users = ''
 fs.readFile("./database/users.json", "utf8", (err, allUsers) => {
@@ -18,8 +19,14 @@ const getUser = (id) => {
     return user;
 }
 
+const isUserValid = (email) => {
+    const user = users.filter((eachUser) => eachUser.email == email)
+    return user
+}
+
 
 module.exports = {
     getAllUsers,
     getUser,
+    isUserValid
 }
