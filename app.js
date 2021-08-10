@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt")
 const userService = require("./services/user")
 const auth = require("./middleware/verifyToken")
 const routesController = require("./routes/v1")()
-const registrationService = require("./services/registration_service/registration")
+const registrationService = require("./services/registration")
 const multer = require('multer')
 const upload = multer({
     dest: 'uploads/'
